@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: repset-test
+  labels:
+    app: rep-set1
+    type: rep-set2
+spec:
+  template:
+    metadata:
+      name: rep-set3
+      labels:
+        app: rep-set4
+        type: rep-set5
+    spec:
+      containers:
+        - name: repcon
+          image: nginx
+  replicas: 3
+  selector:
+     matchLabels:
+      type: front-end
+    
