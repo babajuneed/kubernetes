@@ -6,6 +6,10 @@ metadata:
     app: rep-set1
     type: front-end
 spec:
+  replicas: 3
+  selector:
+     matchLabels:
+      type: front-end
   template:
     metadata:
       name: rep-set3
@@ -16,7 +20,3 @@ spec:
       containers:
         - name: repcon
           image: nginx
-  replicas: 3
-  selector:
-     matchLabels:
-      type: front-end
