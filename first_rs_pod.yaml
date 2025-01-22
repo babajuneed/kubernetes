@@ -4,14 +4,14 @@ metadata:
   name: repset-test
   labels:
     app: rep-set1
-    type: rep-set2
+    type: front-end
 spec:
   template:
     metadata:
       name: rep-set3
       labels:
-        app: rep-set4
-        type: rep-set5
+        app: rep-set1
+        type: front-end
     spec:
       containers:
         - name: repcon
@@ -20,4 +20,3 @@ spec:
   selector:
      matchLabels:
       type: front-end
-    
