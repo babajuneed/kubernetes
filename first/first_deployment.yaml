@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-dep
+  labels:
+    type: lab-dep
+spec:
+  replicas: 3
+  selector:
+      matchLabels:
+        type: frontend
+
+    
+  template:
+    metadata:
+      name: app-pod-temp
+      labels:
+        type: frontend
+    spec:
+      containers:
+        - name: app-container
+          image: nginx
+    

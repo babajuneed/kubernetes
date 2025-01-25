@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: juneed-pod
+  labels:
+    lab1: hi
+    lab2: bye
+spec:
+  containers:
+    - name: juned-con
+      image: nginx
+
