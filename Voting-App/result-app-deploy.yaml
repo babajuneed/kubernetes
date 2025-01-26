@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-app-deploy
+  labels:
+    app: result-app
+    type: result-app-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: result-app
+      type: voting-app-demo
+  template:
+    metadata:
+      name: result-app-pod
+      labels:
+        name: result-app
+        type: voting-app-demo
+    spec:
+      containers:
+        - name: result-app
+          image: babajuneed/examplevotingapp_result
+          ports:
+            - containerPort: 80
+    
